@@ -4,6 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 import tailwindcss from 'tailwindcss';
 
 export default defineConfig({
+  base: '/open-skillz/',
   plugins: [
     svelte(),
     VitePWA({
