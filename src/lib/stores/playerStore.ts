@@ -1,5 +1,6 @@
 import { writable } from 'svelte/store';
-import type { Player, Rating } from '../types';
+import type { Player } from '../types';
+import type { Rating } from 'openskill';
 
 // Initialize the store with data from localStorage or empty array
 const storedPlayers = localStorage.getItem('players');

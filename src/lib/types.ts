@@ -1,7 +1,4 @@
-export interface Rating {
-    mu: number;
-    sigma: number;
-}
+import type { Rating } from 'openskill'
 
 export interface Player {
     id: number;
