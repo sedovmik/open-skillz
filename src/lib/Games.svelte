@@ -2,7 +2,9 @@
     import { gameStore } from './stores/gameStore';
     import { playerStore } from './stores/playerStore';
     import { PlayerState, type ActiveGame } from './types';
-  
+    import { Users, Users2, Trash2 } from 'lucide-svelte';
+    // import { Skull } from 'lucide-svelte';
+
     let showCompleteDialog = false;
     let selectedGameId: number | null = null;
     let player1Score = '';
@@ -54,28 +56,35 @@
 </script>
   
 <div class="container mx-auto">
-    <div class="mb-6">
-      <button
-        on:click={createRandomSingleGame}
-        disabled={availablePlayers.length < 2}
-        class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        New Random Single Game
-      </button>
-      <button
-        on:click={createRandomDoubleGame}
-        disabled={availablePlayers.length < 4}
-        class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        New Random Double Game
-      </button>
-      <button
-        on:click={clearGames}
-        class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        Clear
-      </button>
-    </div>
+    <div class="mb-6 flex justify-between">
+        <div class="space-x-3">
+          <button
+            on:click={createRandomSingleGame}
+            disabled={availablePlayers.length < 2}
+            class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center space-x-2"
+          >
+            <Users class="w-5 h-5" />
+            <span>Single</span>
+          </button>
+          <button
+            on:click={createRandomDoubleGame}
+            disabled={availablePlayers.length < 4}
+            class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center space-x-2"
+          >
+            <Users2 class="w-5 h-5" />
+            <span>Double</span>
+          </button>
+        </div>
+      
+        <button
+          on:click={clearGames}
+          class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center space-x-2"
+        >
+          <Trash2 class="w-5 h-5" />
+          <span>Clear All</span>
+        </button>
+      </div>
+
   
     <div class="bg-white shadow-md rounded-lg overflow-hidden">
       <table class="min-w-full divide-y divide-gray-200">

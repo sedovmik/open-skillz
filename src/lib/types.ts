@@ -21,6 +21,9 @@ export interface Game {
     score?: {
         teamA: number;
         teamB: number;
+    },
+    ratingUpdate?: {
+        [playerId: number]: [Rating, Rating]; // [before, after]
     }
 }
 

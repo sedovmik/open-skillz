@@ -29,6 +29,7 @@
     "vite-plugin-pwa": "^0.21.0"
   },
   "dependencies": {
+    "lucide-svelte": "^0.457.0",
     "openskill": "^4.1.0"
   }
 }
