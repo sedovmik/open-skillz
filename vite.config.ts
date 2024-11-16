@@ -17,20 +17,20 @@ export default defineConfig({
           {
             src: '/icon-192x192.png',
             sizes: '192x192',
-            type: 'image/png'
+            type: 'image/png',
           },
           {
             src: '/icon-512x512.png',
             sizes: '512x512',
-            type: 'image/png'
-          }
-        ]
-      }
-    })
+            type: 'image/png',
+          },
+        ],
+      },
+    }),
   ],
   css: {
     postcss: {
-      plugins: [tailwindcss]
-    }
-  }
+      plugins: [tailwindcss],
+    },
+  },
 });

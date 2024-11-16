@@ -8,7 +8,7 @@
 
   const tabs = [
     { id: 'players', label: 'Players' },
-    { id: 'games', label: 'Games' }
+    { id: 'games', label: 'Games' },
   ];
 </script>
 
@@ -18,7 +18,7 @@
       <TabItem
         label={tab.label}
         active={activeTab === tab.id}
-        on:click={() => activeTab = tab.id}
+        on:click={() => (activeTab = tab.id)}
       />
     {/each}
   </nav>
@@ -33,5 +33,4 @@
 </main>
 
 <style>
-
 </style>

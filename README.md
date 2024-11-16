@@ -18,10 +18,13 @@ A simple web application built with Vite, Svelte, and TypeScript for tracking pl
 
 1. Clone the repository
 2. Install dependencies:
+
 ```bash
 npm install
 ```
+
 3. Start development server:
+
 ```bash
 npm run dev
 ```

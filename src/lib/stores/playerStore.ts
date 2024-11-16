@@ -13,12 +13,12 @@ function createPlayerStore() {
   return {
     subscribe,
     addPlayer: (name: string, rating: Rating) => {
-      update(players => {
+      update((players) => {
         const newPlayer = {
           id: Date.now(),
           name,
           rating,
-          state: PlayerState.Idle
+          state: PlayerState.Idle,
         };
         const updatedPlayers = [...players, newPlayer];
         localStorage.setItem('players', JSON.stringify(updatedPlayers));
@@ -27,8 +27,8 @@ function createPlayerStore() {
     },
     getPlayer: (id: number): Player => {
       let player: Player | undefined;
-      subscribe(players => {
-        player = players.find(p => p.id === id);
+      subscribe((players) => {
+        player = players.find((p) => p.id === id);
       })();
       if (!player) {
         throw new Error(`Player with id ${id} not found`);
@@ -36,33 +36,33 @@ function createPlayerStore() {
       return player;
     },
     updatePlayerState: (id: number, state: PlayerState) => {
-      update(players => {
-        const updatedPlayers = players.map(p => p.id === id ? {...p, state} : p);
+      update((players) => {
+        const updatedPlayers = players.map((p) => (p.id === id ? { ...p, state } : p));
         localStorage.setItem('players', JSON.stringify(updatedPlayers));
         return updatedPlayers;
       });
     },
     updatePlayerRating: (id: number, rating: Rating) => {
-      update(players => {
-        const updatedPlayers = players.map(p => p.id === id ? {...p, rating} : p);
+      update((players) => {
+        const updatedPlayers = players.map((p) => (p.id === id ? { ...p, rating } : p));
         localStorage.setItem('players', JSON.stringify(updatedPlayers));
         return updatedPlayers;
       });
     },
     clearPlayerStatus: () => {
-      update(players => {
-        const updatedPlayers = players.map(p => p.state = PlayerState.Idle);
+      update((players) => {
+        const updatedPlayers = players.map((p) => (p.state = PlayerState.Idle));
         localStorage.setItem('players', JSON.stringify(updatedPlayers));
         return players;
       });
     },
     removePlayer: (id: number) => {
-      update(players => {
-        const updatedPlayers = players.filter(p => p.id !== id);
+      update((players) => {
+        const updatedPlayers = players.filter((p) => p.id !== id);
         localStorage.setItem('players', JSON.stringify(updatedPlayers));
         return updatedPlayers;
       });
-    }
+    },
   };
 }
 

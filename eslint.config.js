@@ -7,6 +7,6 @@ export default [
     rules: {
       // override/add rules settings here, such as:
       // 'svelte/rule-name': 'error'
-    }
-  }
+    },
+  },
 ];
